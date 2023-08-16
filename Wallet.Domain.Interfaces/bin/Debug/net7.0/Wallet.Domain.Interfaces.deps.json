@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Wallet.Domain.Interfaces/1.0.0": {
+        "runtime": {
+          "Wallet.Domain.Interfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Wallet.Domain.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

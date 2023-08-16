@@ -1,0 +1,11 @@
+D:\Wallet\Wallet.Domain.Interfaces\bin\Debug\net7.0\Wallet.Domain.Interfaces.deps.json
+D:\Wallet\Wallet.Domain.Interfaces\bin\Debug\net7.0\Wallet.Domain.Interfaces.dll
+D:\Wallet\Wallet.Domain.Interfaces\bin\Debug\net7.0\Wallet.Domain.Interfaces.pdb
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\Wallet.Domain.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\Wallet.Domain.Interfaces.AssemblyInfoInputs.cache
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\Wallet.Domain.Interfaces.AssemblyInfo.cs
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\Wallet.Domain.Interfaces.csproj.CoreCompileInputs.cache
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\Wallet.Domain.Interfaces.dll
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\refint\Wallet.Domain.Interfaces.dll
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\Wallet.Domain.Interfaces.pdb
+D:\Wallet\Wallet.Domain.Interfaces\obj\Debug\net7.0\ref\Wallet.Domain.Interfaces.dll

@@ -1,0 +1,15 @@
+D:\Wallet\Wallet.Domain.Entities\bin\Debug\net7.0\Wallet.Domain.Entities.deps.json
+D:\Wallet\Wallet.Domain.Entities\bin\Debug\net7.0\Wallet.Domain.Entities.dll
+D:\Wallet\Wallet.Domain.Entities\bin\Debug\net7.0\Wallet.Domain.Entities.pdb
+D:\Wallet\Wallet.Domain.Entities\bin\Debug\net7.0\Wallet.Domain.Interfaces.dll
+D:\Wallet\Wallet.Domain.Entities\bin\Debug\net7.0\Wallet.Domain.Interfaces.pdb
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.csproj.AssemblyReference.cache
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.AssemblyInfoInputs.cache
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.AssemblyInfo.cs
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.csproj.CoreCompileInputs.cache
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.csproj.CopyComplete
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.dll
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\refint\Wallet.Domain.Entities.dll
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\Wallet.Domain.Entities.pdb
+D:\Wallet\Wallet.Domain.Entities\obj\Debug\net7.0\ref\Wallet.Domain.Entities.dll
