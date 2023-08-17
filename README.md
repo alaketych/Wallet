@@ -1,3 +1,3 @@
 # Wallet
 
-Add-Migration NewMigration -Project Wallet.Infrastucture.Data
+Add-Migration { Migration_Name } -Project Wallet.Infrastucture.Data
