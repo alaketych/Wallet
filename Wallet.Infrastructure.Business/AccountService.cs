@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,12 +59,8 @@ namespace Wallet.Infrastructure.Business
 		public async Task<string> GetDailyPoints(int id)
 		{
 			var getTodaysDate = DateTime.Now;
-			var persianCalendar = new PersianCalendar();
-			var getMonth = persianCalendar.GetMonth(DateTime.Now);
-			var getDay = persianCalendar.GetDayOfMonth(DateTime.Now);
-			var season = (Season)Math.Ceiling(getMonth / 3.0);
-
 			var todaysSeason = GetSeason(getTodaysDate);
+
 			DateTime springStarts = new DateTime(DateTime.Now.Year, 3, 1);
 			DateTime summerStarts = new DateTime(DateTime.Now.Year, 6, 1);
 			DateTime autumnStarts = new DateTime(DateTime.Now.Year, 9, 1);

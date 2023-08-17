@@ -29,7 +29,7 @@ namespace Wallet.API.Controllers
 					PaymentDue = await _accountService.GetPaymentDue(),
 					DailyPoints = await _accountService.GetDailyPoints(account.Id),
 					Operations = await _accountService.GetLatestOperation(account.Id)
-				}
+		}
 			};
 
 			return response;
