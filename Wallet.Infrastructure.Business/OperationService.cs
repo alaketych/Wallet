@@ -46,11 +46,5 @@ namespace Wallet.Infrastructure.Business
 			var operation = await _unitOfWork.OperationRepository.GetIdAsync(id);
 			return _mapper.Map<OperationDto>(operation);
 		}
-
-		public async Task<IList<OperationDto>> GetLatestAccountOperations(int id)
-		{
-			var operations = await _unitOfWork.OperationRepository.GetLatestOperations(id);
-			return _mapper.Map<IList<OperationDto>>(operations);
-		}
 	}
 }

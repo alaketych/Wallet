@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Wallet.API.Models;
+using Wallet.API.Models.Account.Response;
 using Wallet.Infrastucture.Data.Dto.Account;
 using Wallet.Services.Interfaces;
 
@@ -11,35 +12,27 @@ namespace Wallet.API.Controllers
 	public class AccountController : ControllerBase
 	{
 		private readonly IAccountService _accountService;
-		private readonly IOperationService _operationService;
-		private readonly IMapper _mapper;
 
-		public AccountController(
-			IAccountService accountService,
-			IOperationService operationService,
-			IMapper mapper)
+		public AccountController(IAccountService accountService)
 		{
 			_accountService = accountService;
-			_operationService = operationService;
-			_mapper = mapper;
 		}
 
 		[HttpGet("{id}")]
-		public async Task<IActionResult> GetAccount(int id)
+		public async Task<DtoResponse<AccountDetailedResponse>> GetAccount(int id)
 		{
 			var account = await _accountService.GetByIdAsync(id);
-			if (account != null)
+			var response = new DtoResponse<AccountDetailedResponse>()
 			{
-				return Ok(account);
-			}
+				Result = new AccountDetailedResponse()
+				{
+					PaymentDue = await _accountService.GetPaymentDue(),
+					DailyPoints = await _accountService.GetDailyPoints(account.Id),
+					Operations = await _accountService.GetLatestOperation(account.Id)
+				}
+			};
 
-			var latestAccountOperations = await _operationService.GetLatestAccountOperations(account.Id);
-			if (latestAccountOperations != null)
-			{
-				return Ok(latestAccountOperations);
-			}
-
-			return NotFound();
+			return response;
 		}
 	}
 }

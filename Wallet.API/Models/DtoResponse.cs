@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Wallet.API.Models
+﻿namespace Wallet.API.Models
 {
 	public class DtoResponse<TResult>
 	{

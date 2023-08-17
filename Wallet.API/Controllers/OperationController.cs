@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Wallet.API.Models;
+using Wallet.API.Models.Operation.Response;
 using Wallet.Infrastructure.Business;
 using Wallet.Services.Interfaces;
 
@@ -10,26 +12,25 @@ namespace Wallet.API.Controllers
 	public class OperationController : ControllerBase
 	{
 		private readonly IOperationService _operationService;
-		private readonly IMapper _mapper;
 
-		public OperationController(
-			IOperationService operationService,
-			IMapper mapper)
+		public OperationController(IOperationService operationService)
 		{
 			_operationService = operationService;
-			_mapper = mapper;
 		}
 
 		[HttpGet("{id}")]
-		public async Task<IActionResult> GetOperation(int id)
+		public async Task<DtoResponse<OperationDetailedResponse>> GetOperation(int id)
 		{
 			var operation = await _operationService.GetByIdAsync(id);
-			if (operation != null)
+			var response = new DtoResponse<OperationDetailedResponse>()
 			{
-				return Ok(operation);
-			}
+				Result = new OperationDetailedResponse()
+				{
+					Status = operation.Pending ? "Approved" : "Not Approved"
+				}
+			};
 
-			return NotFound();
+			return response;
 		}
 	}
 }

@@ -2,9 +2,11 @@
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wallet.Domain.Entities;
 using Wallet.Infrastucture.Data;
 using Wallet.Infrastucture.Data.Dto;
 using Wallet.Infrastucture.Data.Dto.Account;
@@ -48,11 +50,99 @@ namespace Wallet.Infrastructure.Business
 			return _mapper.Map<AccountDto>(account);
 		}
 
-		public async Task<short> GetDailyPoints(int id)
+		public async Task<string> GetPaymentDue()
 		{
-			//TODO: make an logic for calculating daily points.
+			return $"You've paid your {DateTime.Now.ToString("MMMM")} balance";
+		}
 
-			return 1;
+		public async Task<string> GetDailyPoints(int id)
+		{
+			var getTodaysDate = DateTime.Now;
+			var persianCalendar = new PersianCalendar();
+			var getMonth = persianCalendar.GetMonth(DateTime.Now);
+			var getDay = persianCalendar.GetDayOfMonth(DateTime.Now);
+			var season = (Season)Math.Ceiling(getMonth / 3.0);
+
+			var todaysSeason = GetSeason(getTodaysDate);
+			DateTime springStarts = new DateTime(DateTime.Now.Year, 3, 1);
+			DateTime summerStarts = new DateTime(DateTime.Now.Year, 6, 1);
+			DateTime autumnStarts = new DateTime(DateTime.Now.Year, 9, 1);
+			DateTime winterStarts = new DateTime(DateTime.Now.Year, 12, 1);
+
+			TimeSpan daysPassed = new TimeSpan();
+			switch (todaysSeason)
+			{
+				case Season.Spring:
+					daysPassed = getTodaysDate - springStarts;
+					break;
+				case Season.Summer:
+					daysPassed = getTodaysDate - summerStarts;
+					break;
+				case Season.Autumn:
+					daysPassed = getTodaysDate - autumnStarts;
+					break;
+				case Season.Winter:
+					daysPassed = getTodaysDate - winterStarts;
+					break;
+			}
+
+			var points = CalculatePoints((int)daysPassed.TotalDays, springStarts.Day);
+
+			return points;
+		}
+
+		public async Task<IList<OperationDto>> GetLatestOperation(int id)
+		{
+			var accountOperations = await _unitOfWork.OperationRepository.GetLatestOperations(id);
+			return _mapper.Map<IList<OperationDto>>(accountOperations);
+		}
+
+		private static Season GetSeason(DateTime date)
+		{
+			int month = date.Month;
+
+			if (month >= 3 && month <= 5)
+			{
+				return Season.Spring;
+			}
+			else if (month >= 6 && month <= 8)
+			{
+				return Season.Summer;
+			}
+			else if (month >= 9 && month <= 11)
+			{
+				return Season.Autumn;
+			}
+			else
+			{
+				return Season.Winter;
+			}
+		}
+
+		private static string CalculatePoints(int dayNumber, int seasonStartDay, int points = 2)
+		{
+			if (dayNumber == 1)
+			{
+				return points.ToString();
+			}
+			else if (dayNumber == 2)
+			{
+				return (points + 1).ToString();
+			}
+			else
+			{
+				int prevDayPoints = int.Parse(CalculatePoints(dayNumber - 1, seasonStartDay));
+				int prevPrevDayPoints = int.Parse(CalculatePoints(dayNumber - 2, seasonStartDay));
+
+				int currentPoints = prevDayPoints + prevPrevDayPoints;
+
+				if (currentPoints > 1000)
+				{
+					return $"{currentPoints / 1000}K";
+				}
+
+				return currentPoints.ToString();
+			}
 		}
 	}
 }
