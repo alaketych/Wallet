@@ -26,7 +26,16 @@ namespace Wallet.API.Controllers
 			{
 				Result = new OperationDetailedResponse()
 				{
-					Status = operation.Pending ? "Approved" : "Not Approved"
+					Id = operation.Id,
+					AccountId = operation.Id,
+					Type = operation.Type,
+					Name = operation.Name,
+					Description = operation.Description,
+					DateTimeOffset = operation.DateTimeOffset,
+					Pending = operation.Pending,
+					Status = operation.Pending ? "Not Approved" : "Approved",
+					Total = operation.Total,
+					Icon = operation.Icon,
 				}
 			};
 

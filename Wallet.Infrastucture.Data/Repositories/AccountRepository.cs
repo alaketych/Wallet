@@ -9,7 +9,7 @@ namespace Wallet.Infrastucture.Data.Repositories
 
 		public AccountRepository(DataContext context) : base(context) 
 		{
-			context = _context;
+			_context = context;
 		}
 	}
 }

@@ -22,14 +22,19 @@ namespace Wallet.API.Controllers
 		public async Task<DtoResponse<AccountDetailedResponse>> GetAccount(int id)
 		{
 			var account = await _accountService.GetByIdAsync(id);
+
 			var response = new DtoResponse<AccountDetailedResponse>()
 			{
 				Result = new AccountDetailedResponse()
 				{
+					Id = account.Id,
+					AccountName = account.AccountName,
+					Balance = account.Balance,
+					Limit = account.Limit,
 					PaymentDue = await _accountService.GetPaymentDue(),
 					DailyPoints = await _accountService.GetDailyPoints(account.Id),
 					Operations = await _accountService.GetLatestOperation(account.Id)
-		}
+				}
 			};
 
 			return response;

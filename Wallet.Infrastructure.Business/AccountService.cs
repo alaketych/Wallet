@@ -53,7 +53,7 @@ namespace Wallet.Infrastructure.Business
 
 		public async Task<string> GetPaymentDue()
 		{
-			return $"You've paid your {DateTime.Now.ToString("MMMM")} balance";
+			return $"You've paid your {new CultureInfo(DateTime.Now.ToString("MMMM")).TextInfo.ToTitleCase} balance";
 		}
 
 		public async Task<string> GetDailyPoints(int id)
@@ -62,7 +62,7 @@ namespace Wallet.Infrastructure.Business
 			var todaysSeason = GetSeason(getTodaysDate);
 
 			DateTime springStarts = new DateTime(DateTime.Now.Year, 3, 1);
-			DateTime summerStarts = new DateTime(DateTime.Now.Year, 6, 1);
+			DateTime summerStarts = new DateTime(DateTime.Now.Year, 8, 10);
 			DateTime autumnStarts = new DateTime(DateTime.Now.Year, 9, 1);
 			DateTime winterStarts = new DateTime(DateTime.Now.Year, 12, 1);
 
@@ -83,9 +83,7 @@ namespace Wallet.Infrastructure.Business
 					break;
 			}
 
-			var points = CalculatePoints((int)daysPassed.TotalDays, springStarts.Day);
-
-			return points;
+			return CalculatePoints((int)daysPassed.TotalDays, springStarts.Day);
 		}
 
 		public async Task<IList<OperationDto>> GetLatestOperation(int id)

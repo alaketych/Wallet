@@ -9,7 +9,7 @@ namespace Wallet.Infrastucture.Data.Repositories
 
 		public OperationRepository(DataContext context) : base(context)
 		{
-			context = _context;
+			_context = context;
 		}
 
 		public async Task<IList<Operation>> GetLatestOperations(int id)
@@ -18,7 +18,7 @@ namespace Wallet.Infrastucture.Data.Repositories
 
 			return await _context.Set<Operation>()
 				.Where(acc => acc.AccountId == id)
-				.OrderBy(o => o.DateTimeOffset)
+				.OrderByDescending(o => o.DateTimeOffset)
 				.Take(latestOperations)
 				.ToListAsync();
 		}

@@ -12,8 +12,8 @@ using Wallet.Infrastucture.Data;
 namespace Wallet.Infrastucture.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230816195655_Initial")]
-    partial class Initial
+    [Migration("20230817140345_NewMigration")]
+    partial class NewMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,7 +111,7 @@ namespace Wallet.Infrastucture.Data.Migrations
                         {
                             Id = 1,
                             AccountId = 1,
-                            DateTimeOffset = new DateTimeOffset(new DateTime(2023, 8, 16, 19, 56, 55, 472, DateTimeKind.Unspecified).AddTicks(4881), new TimeSpan(0, 0, 0, 0, 0)),
+                            DateTimeOffset = new DateTimeOffset(new DateTime(2023, 8, 17, 14, 3, 45, 92, DateTimeKind.Unspecified).AddTicks(3917), new TimeSpan(0, 0, 0, 0, 0)),
                             Description = "Test",
                             Icon = new byte[0],
                             Name = "Test",

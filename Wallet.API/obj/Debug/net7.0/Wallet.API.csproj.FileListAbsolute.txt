@@ -1,10 +1,3 @@
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.csproj.AssemblyReference.cache
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.GeneratedMSBuildEditorConfig.editorconfig
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.AssemblyInfoInputs.cache
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.AssemblyInfo.cs
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.csproj.CoreCompileInputs.cache
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Wallet\Wallet.API\bin\Debug\net7.0\appsettings.Development.json
 D:\Wallet\Wallet.API\bin\Debug\net7.0\appsettings.json
 D:\Wallet\Wallet.API\bin\Debug\net7.0\Wallet.API.exe
@@ -75,6 +68,13 @@ D:\Wallet\Wallet.API\bin\Debug\net7.0\Wallet.Infrastucture.Data.pdb
 D:\Wallet\Wallet.API\bin\Debug\net7.0\Wallet.Domain.Entities.pdb
 D:\Wallet\Wallet.API\bin\Debug\net7.0\Wallet.Domain.Interfaces.pdb
 D:\Wallet\Wallet.API\bin\Debug\net7.0\Wallet.Services.Interfaces.pdb
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.csproj.AssemblyReference.cache
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.AssemblyInfoInputs.cache
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.AssemblyInfo.cs
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.csproj.CoreCompileInputs.cache
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Wallet\Wallet.API\obj\Debug\net7.0\Wallet.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Wallet\Wallet.API\obj\Debug\net7.0\staticwebassets\msbuild.Wallet.API.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Wallet\Wallet.API\obj\Debug\net7.0\staticwebassets\msbuild.build.Wallet.API.props
 D:\Wallet\Wallet.API\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Wallet.API.props

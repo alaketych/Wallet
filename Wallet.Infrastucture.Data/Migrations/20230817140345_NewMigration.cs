@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Wallet.Infrastucture.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class NewMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -60,7 +60,7 @@ namespace Wallet.Infrastucture.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Operation",
                 columns: new[] { "Id", "AccountId", "DateTimeOffset", "Description", "Icon", "Name", "Pending", "Total", "Type" },
-                values: new object[] { 1, 1, new DateTimeOffset(new DateTime(2023, 8, 16, 19, 56, 55, 472, DateTimeKind.Unspecified).AddTicks(4881), new TimeSpan(0, 0, 0, 0, 0)), "Test", new byte[0], "Test", false, 5m, 1 });
+                values: new object[] { 1, 1, new DateTimeOffset(new DateTime(2023, 8, 17, 14, 3, 45, 92, DateTimeKind.Unspecified).AddTicks(3917), new TimeSpan(0, 0, 0, 0, 0)), "Test", new byte[0], "Test", false, 5m, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Operation_AccountId",
